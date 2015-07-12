@@ -1,10 +1,10 @@
-= autopromoter =
+# autopromoter
 
 Autopromoter is a tool for [Munki](https://github.com/munki/munki) [pkginfo files](https://github.com/munki/munki/wiki/Pkginfo-Files) that automatically promotes (and demotes) Munki catalogs in a given pkginfo file based on a configured "policy" of dates and times.
 
 This policy is referred to as the promotion/demotion set and simply consists of the timestamp range a given catalog name should be present in a pkginfo's catalogs key. Once the initial pro/dem set is configured in the pkginfo autopromoter will then manage the lifecycle of which catalogs ought to be in the pkginfo at any given time. The most common use case is to remove some of the monotomy in the workflow of moving a pkginfo from, say, the testing catalog to the production catalog.
 
-== Getting started ==
+## Getting started
 
 To initialize the pro/dem set in a given pkginfo with the default policy simply run autopromoter on a pkginfo file with no other arguments:
 
@@ -52,7 +52,7 @@ no catalog promotions or demotions
 
 Because autopromoter does not change pkginfo files unless necessary it is expected that it would be run in an automated fashion (say, nightly) so that promotions and demotions can happen automatically. Though this isn't strictly necessary if you'd like it to run in a semi-automated fashion.
 
-= Understanding pro/dem sets (autopromoter policy), promotions, and demotions =
+## Understanding pro/dem sets (autopromoter policy), promotions, and demotions
 
 Munki administrators are highly encouraged to manage software packages in different catalogs often representing the stages of testing and deployment they've been through.
 
@@ -68,7 +68,7 @@ When a catalog in the pro/dem set is valid (that is to say that the current date
 
 Autopromoter will issue a warning for catalogs that are in the pkginfo but not managed in the pro/dem policy set and will continue to include that catalog in the pkginfo even amongst other promotions/demotions.
 
-= Specifing your own initial pro/dem sets =
+## Specifing your own initial pro/dem sets
 
 Autopromoter allows the specification of your own pro/dem policy set. It is specified on the command line with the `--catalog` switch:
 
@@ -101,7 +101,7 @@ Note that the day time deltas are based on relative timestamps for the given cat
 
 While saturn did specify a 10 day delta it gets no demotion time. The implicit behaviour of managing a list of catalogs is that the beginning catalog is immediately available and the last catalog will never be demoted (because it's the last catalog in the chain). This order is established by the order of catalog arguments specified to autopromoter or the default set of catalogs (development, testing, production).
 
-= Future things =
+## Future things
 
 Autopromoter is a very simple (perhaps too simple) tool to manage the autopromotion and demotion of catalogs in an escalating testing-type workflow.
 
