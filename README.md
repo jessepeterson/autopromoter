@@ -1,6 +1,6 @@
 = autopromoter =
 
-Autopromoter is a tool for [Munki](https://github.com/munki/munki) [pkginfo files](https://github.com/munki/munki/wiki/Pkg) that automatically promotes (and demotes) Munki catalogs in a given pkginfo file based on a configured "policy."
+Autopromoter is a tool for [Munki](https://github.com/munki/munki) [pkginfo files](https://github.com/munki/munki/wiki/Pkginfo-Files) that automatically promotes (and demotes) Munki catalogs in a given pkginfo file based on a configured "policy" of dates and times.
 
 This policy is referred to as the promotion/demotion set and simply consists of the timestamp range a given catalog name should be present in a pkginfo's catalogs key. Once the initial pro/dem set is configured in the pkginfo autopromoter will then manage the lifecycle of which catalogs ought to be in the pkginfo at any given time. The most common use case is to remove some of the monotomy in the workflow of moving a pkginfo from, say, the testing catalog to the production catalog.
 
