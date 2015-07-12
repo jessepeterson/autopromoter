@@ -73,7 +73,7 @@ Autopromoter will issue a warning for catalogs that are in the pkginfo but not m
 Autopromoter allows the specification of your own pro/dem policy set. It is specified on the command line with the `--catalog` switch:
 
 ```bash
-autopromoter.py --catalog pluto --catalog mars:25 Firefox-39.0.plist
+autopromoter.py --catalog pluto --catalog mars:10 --catalog saturn:10 Firefox-39.0.plist
 ```
 
 This will override the default policy and create pro/dem catalog sets for pluto (whith the default demotion delta of five days) and for mars with a specified 10 day demotion delta and the same with the saturn catalog:
